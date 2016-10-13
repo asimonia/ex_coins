@@ -1,4 +1,4 @@
-var startingAmount = .46;
+var startingAmount = .04;
 
 function coinCounter (amount) {
   // Initialize a JavaScript object to hold the coins
@@ -27,11 +27,10 @@ function coinCounter (amount) {
   }
   amountLeft -= coinPurse.nickels * .05;
 
-  coinPurse.pennies = coinsNeeded;
+  coinPurse.pennies = Math.round(amountLeft / 0.01);
   if (!(amountLeft % .01)) {
     return coinPurse;
   }
-  amountLeft -= coinPurse.pennies * .01;
 
   return coinPurse;
 }
